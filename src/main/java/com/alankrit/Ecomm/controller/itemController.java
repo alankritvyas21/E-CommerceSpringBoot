@@ -16,41 +16,47 @@ import org.springframework.web.bind.annotation.RestController;
 import com.alankrit.Ecomm.model.categoryModel;
 import com.alankrit.Ecomm.model.itemModel;
 import com.alankrit.Ecomm.service.categoryService;
+import com.alankrit.Ecomm.service.itemService;
 
 @RestController
 @RequestMapping("/ecommerce")
-public class CategoryController {
-
-    @Autowired
-    categoryService categoryService;
+public class itemController {
+	@Autowired
+    itemService itemService;
     
     @CrossOrigin(origins = "http://localhost:4200")
-    @GetMapping("/category")
-	public List<categoryModel> getCategories() {
-		return categoryService.getAllCategories();
+    @GetMapping("/item")
+	public List<itemModel> getCategories() {
+		return itemService.getAllItems();
 	}
 	
 	@CrossOrigin(origins = "http://localhost:4200")
-	@GetMapping("/category/{id}")
-	public categoryModel getCategoryById(@PathVariable Integer id) {
-		return categoryService.getCategoryById(id);
+	@GetMapping("/item/{id}")
+	public itemModel getCategoryById(@PathVariable Integer id) {
+		return itemService.getItemByCategory(id);
 	}
 
 	@CrossOrigin(origins = "http://localhost:4200")
-    @PostMapping("/createCategory")
-    public categoryModel createCategory(@RequestBody categoryModel category) {
-        return categoryService.createCategory(category);
+    @PostMapping("/createItem")
+    public itemModel createCategory(@RequestBody itemModel item) {
+        return itemService.createItem(item);
     }
     
 	@CrossOrigin(origins = "http://localhost:4200")
-    @PutMapping("/updateCategory")
-    public categoryModel updateCategory(@RequestBody categoryModel category) {
-    	return categoryService.updateCategory(category);
+    @PutMapping("/updateItem")
+    public itemModel updateCategory(@RequestBody itemModel item) {
+    	return itemService.updateItem(item);
     }
     
 	@CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping("/deleteCategory/{id}")
     public String deleteCategoryById(@PathVariable Integer id) {
-    	return categoryService.deleteCategoryById(id);
+    	return itemService.deleteItemById(id);
     }
+	
+	
+	public itemController() {
+		// TODO Auto-generated constructor stub
+	}
+
 }

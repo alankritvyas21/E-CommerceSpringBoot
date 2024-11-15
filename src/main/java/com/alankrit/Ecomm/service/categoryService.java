@@ -3,6 +3,7 @@ package com.alankrit.Ecomm.service;
 import java.util.List;
 
 import com.alankrit.Ecomm.model.categoryModel;
+import com.alankrit.Ecomm.model.itemModel;
 
 public interface categoryService {
     public categoryModel createCategory(categoryModel category);
