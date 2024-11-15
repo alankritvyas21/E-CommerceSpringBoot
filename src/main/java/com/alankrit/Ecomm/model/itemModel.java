@@ -1,5 +1,6 @@
 package com.alankrit.Ecomm.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,6 +20,7 @@ public class itemModel {
 	
 	private String currencySymbol;
 	
+	@Column(length = 1000)
 	private String description;
 	
 	private String imageUrl1;
