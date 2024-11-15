@@ -13,9 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.alankrit.Ecomm.model.categoryModel;
 import com.alankrit.Ecomm.model.itemModel;
-import com.alankrit.Ecomm.service.categoryService;
 import com.alankrit.Ecomm.service.itemService;
 
 @RestController
@@ -49,7 +47,7 @@ public class itemController {
     }
     
 	@CrossOrigin(origins = "http://localhost:4200")
-    @DeleteMapping("/deleteCategory/{id}")
+    @DeleteMapping("/deleteItem/{id}")
     public String deleteCategoryById(@PathVariable Integer id) {
     	return itemService.deleteItemById(id);
     }
