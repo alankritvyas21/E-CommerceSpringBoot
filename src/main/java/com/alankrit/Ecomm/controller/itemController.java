@@ -29,10 +29,10 @@ public class itemController {
 	}
 	
 	@CrossOrigin(origins = "http://localhost:4200")
-	@GetMapping("/item/{id}")
-	public itemModel getCategoryById(@PathVariable Integer id) {
-		return itemService.getItemByCategory(id);
-	}
+    @GetMapping("/item/category/{categoryId}")
+    public List<itemModel> getItemsByCategoryId(@PathVariable("categoryId") Integer categoryId) {
+        return itemService.getItemsByCategory(categoryId);
+    }
 
 	@CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/createItem")

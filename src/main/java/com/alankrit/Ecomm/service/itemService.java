@@ -12,7 +12,7 @@ public interface itemService {
 	    
 	    public List<itemModel> getAllItems();
 	    
-	    public itemModel getItemByCategory(Integer id);
+	    List<itemModel> getItemsByCategory(Integer categoryId);
 	    
 	    public itemModel updateItem(itemModel item);
 	    

@@ -26,9 +26,9 @@ public class itemServiceImpl implements itemService {
 	}
 
 	@Override
-	public itemModel getItemByCategory(Integer id) {
-		return itemRepository.findById(id).get();
-	}
+	public List<itemModel> getItemsByCategory(Integer categoryId) {
+        return itemRepository.findByCategoryId(categoryId);
+    }
 
 	@Override
 	public itemModel updateItem(itemModel item) {
